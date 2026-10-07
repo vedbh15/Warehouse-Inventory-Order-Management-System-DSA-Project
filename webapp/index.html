@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Inventory and Order Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Warehouse Inventory and Order Management</h1>
+        <p>Part 2: Full Integration Simulation</p>
+    </header>
+
+    <main>
+        <section id="inventory-section">
+            <h2>Parts Inventory (Linked List)</h2>
+            <div class="controls">
+                <input type="number" id="part-id" placeholder="Part ID">
+                <input type="text" id="part-name" placeholder="Part Name">
+                <input type="number" id="part-qty" placeholder="Quantity">
+                <input type="number" id="part-price" placeholder="Price">
+                <button onclick="uiAddPart()">Add Part</button>
+                <input type="number" id="del-part-id" placeholder="Part ID to delete" style="width:120px; margin-left:10px;">
+                <button onclick="uiDeletePart()">Delete Part</button>
+            </div>
+            <div id="inventory-list" class="data-container">
+                <!-- JS will populate this -->
+            </div>
+        </section>
+
+        <section id="orders-section">
+            <h2>Order Processing (Queue)</h2>
+            <div class="controls">
+                <input type="number" id="order-id" placeholder="Order ID">
+                <input type="number" id="order-part-id" placeholder="Part ID">
+                <input type="number" id="order-qty" placeholder="Quantity">
+                <button onclick="uiPlaceOrder()">Place Order</button>
+                <button onclick="uiProcessOrder()" style="margin-left:10px;">Process Next Order</button>
+            </div>
+            <div id="order-queue" class="data-container">
+                <!-- JS will populate this -->
+            </div>
+        </section>
+
+        <section id="history-section">
+            <h2>Order History (Stack)</h2>
+            <div class="controls">
+                <button onclick="uiUndoOrder()">Undo Last Order</button>
+            </div>
+            <div id="history-stack" class="data-container">
+                <!-- JS will populate this -->
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- JS explicitly separated to mirror C++ logic -->
+    <script src="script.js"></script>
+</body>
+</html>
